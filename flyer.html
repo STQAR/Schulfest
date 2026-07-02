@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tombola-Flyer zum Ausdrucken – Schulfest Pfarrkirchen bei Bad Hall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gelb:#FFC93C;
+    --gelb-hell:#FFF3D1;
+    --gruen:#1E6B4E;
+    --gruen-dunkel:#14503A;
+    --rot:#E4572E;
+    --papier:#FDFBF5;
+    --tinte:#26302B;
+    --grau:#6E7A73;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Nunito',sans-serif;
+    background:#ccc;
+    color:var(--tinte);
+  }
+  h1{font-family:'Baloo 2',cursive;line-height:1.15}
+
+  /* Bildschirm: Hinweisleiste + zentrierte Seite */
+  .druck-hinweis{
+    background:var(--gruen-dunkel);color:#fff;
+    text-align:center;padding:14px 16px;font-size:.95rem;
+  }
+  .druck-hinweis strong{color:var(--gelb)}
+  .seite-wrapper{display:flex;justify-content:center;padding:24px 0 60px}
+
+  /* A4-Seite mit 2x2-Raster aus A6-Flyern */
+  .seite{
+    width:210mm;height:297mm;
+    background:var(--papier);
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-rows:minmax(0,1fr) minmax(0,1fr);
+    overflow:hidden;
+    box-shadow:0 4px 24px rgba(0,0,0,.25);
+  }
+  .flyer{
+    position:relative;
+    min-height:0;
+    padding:8mm 8mm 6mm;
+    display:flex;flex-direction:column;align-items:center;
+    text-align:center;
+    border-right:1px dashed #bbb;
+    border-bottom:1px dashed #bbb;
+    overflow:hidden;
+  }
+  .seite .flyer:nth-child(2){border-right:none}
+  .seite .flyer:nth-child(3),.seite .flyer:nth-child(4){border-bottom:none}
+  .schere{
+    position:absolute;top:6px;right:6px;
+    font-size:11px;color:#aaa;
+  }
+  .seite .flyer:nth-child(2) .schere,.seite .flyer:nth-child(4) .schere{display:none}
+
+  .wimpel{width:100%;height:16mm;flex:none}
+
+  .eyebrow{
+    display:inline-block;
+    background:var(--gelb);
+    color:var(--gruen-dunkel);
+    font-weight:700;
+    font-size:8.5pt;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    padding:4px 12px;
+    border-radius:999px;
+    margin:9px 0 8px;
+  }
+  h1{
+    font-size:16.5pt;font-weight:800;color:var(--gruen-dunkel);
+    margin-bottom:5px;text-wrap:balance;
+  }
+  .untertitel{
+    font-size:9.5pt;color:var(--grau);max-width:78mm;margin:0 auto 10px;
+  }
+
+  .qr-box{
+    background:#fff;
+    border:2.5px solid var(--gruen-dunkel);
+    border-radius:10px;
+    padding:6mm;
+    margin:2mm auto 3mm;
+    display:inline-flex;
+  }
+  .qr-box svg{width:34mm;height:34mm;display:block}
+  .qr-link{
+    font-family:'Baloo 2',cursive;font-weight:700;
+    font-size:10pt;color:var(--gruen-dunkel);
+    margin-bottom:9px;word-break:break-all;
+  }
+  .fakten{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:6px;
+    margin-top:auto;padding-top:6px;
+  }
+  .fakten span{
+    background:var(--gelb-hell);
+    border:1px solid #EAD9A0;
+    color:var(--gruen-dunkel);
+    font-weight:700;font-size:8pt;
+    padding:4px 10px;border-radius:999px;
+  }
+  .danke{
+    font-size:8pt;color:var(--gruen);font-weight:700;
+    margin-top:8px;
+  }
+
+  @media print{
+    body{background:#fff}
+    .druck-hinweis{display:none}
+    .seite-wrapper{padding:0}
+    .seite{box-shadow:none;margin:0}
+    @page{size:A4;margin:0}
+    .schere{display:none}
+  }
+</style>
+</head>
+<body>
+
+<p class="druck-hinweis">
+  Zum Drucken: <strong>Strg/⌘ + P</strong> → Papierformat <strong>A4</strong>, Ränder <strong>„Keine"</strong>.
+  Jede A4-Seite ergibt <strong>4 Flyer</strong> zum Ausschneiden (gestrichelte Linien).
+</p>
+
+<div class="seite-wrapper">
+<div class="seite">
+
+  <!-- Flyer 1 -->
+  <article class="flyer">
+    <span class="schere">✂ zum Ausschneiden</span>
+    <svg class="wimpel" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 H1200 V4 H0 Z" fill="#FFC93C"/>
+      <g>
+        <polygon points="0,4 60,4 30,50" fill="#FFC93C"/>
+        <polygon points="60,4 120,4 90,50" fill="#E4572E"/>
+        <polygon points="120,4 180,4 150,50" fill="#14503A"/>
+        <polygon points="180,4 240,4 210,50" fill="#FFC93C"/>
+        <polygon points="240,4 300,4 270,50" fill="#E4572E"/>
+        <polygon points="300,4 360,4 330,50" fill="#14503A"/>
+        <polygon points="360,4 420,4 390,50" fill="#FFC93C"/>
+        <polygon points="420,4 480,4 450,50" fill="#E4572E"/>
+        <polygon points="480,4 540,4 510,50" fill="#14503A"/>
+        <polygon points="540,4 600,4 570,50" fill="#FFC93C"/>
+        <polygon points="600,4 660,4 630,50" fill="#E4572E"/>
+        <polygon points="660,4 720,4 690,50" fill="#14503A"/>
+        <polygon points="720,4 780,4 750,50" fill="#FFC93C"/>
+        <polygon points="780,4 840,4 810,50" fill="#E4572E"/>
+        <polygon points="840,4 900,4 870,50" fill="#14503A"/>
+        <polygon points="900,4 960,4 930,50" fill="#FFC93C"/>
+        <polygon points="960,4 1020,4 990,50" fill="#E4572E"/>
+        <polygon points="1020,4 1080,4 1050,50" fill="#14503A"/>
+        <polygon points="1080,4 1140,4 1110,50" fill="#FFC93C"/>
+        <polygon points="1140,4 1200,4 1170,50" fill="#E4572E"/>
+      </g>
+    </svg>
+    <span class="eyebrow">Schulfest Pfarrkirchen bei Bad Hall</span>
+    <h1>Große Tombola –<br>das gibt's zu gewinnen! 🎉</h1>
+    <p class="untertitel">Einfach den Code mit dem Handy scannen und alle Hauptpreise &amp; Sponsoren entdecken.</p>
+    <div class="qr-box">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#14503A" d="M0 0.5h7m1 0h1m1 0h6m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h3m1 0h2m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m3 0h1m1 0h1m3 0h1m1 0h2m2 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h2m1 0h3m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m4 0h2m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m2 0h2m1 0h5m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m1 0h2m2 0h5M0 8.5h1m1 0h2m1 0h3m1 0h2m1 0h2m1 0h2m1 0h1m3 0h1m2 0h1m1 0h2M3 9.5h1m4 0h1m1 0h1m1 0h4m3 0h1m2 0h3m3 0h1M0 10.5h2m2 0h3m6 0h1m2 0h1m3 0h1m5 0h2M3 11.5h1m1 0h1m1 0h2m2 0h2m2 0h1m2 0h1m9 0h1M0 12.5h1m1 0h1m1 0h8m2 0h1m2 0h1m3 0h1m3 0h2M0 13.5h1m2 0h3m5 0h2m1 0h2m1 0h1m1 0h1m2 0h1m3 0h3M1 14.5h2m1 0h1m1 0h1m2 0h1m2 0h2m2 0h2m1 0h3m1 0h1m2 0h3M0 15.5h2m1 0h2m2 0h6m1 0h3m3 0h3m1 0h1m2 0h1M0 16.5h1m1 0h1m1 0h1m1 0h2m6 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1M5 17.5h1m2 0h1m5 0h2m1 0h1m2 0h1m2 0h1m1 0h3M0 18.5h1m3 0h3m2 0h1m2 0h5m1 0h1m5 0h1m1 0h1M2 19.5h1m2 0h1m1 0h2m1 0h1m2 0h3m1 0h1m2 0h3m3 0h1M1 20.5h3m2 0h3m1 0h2m1 0h2m2 0h2m1 0h7M8 21.5h1m1 0h3m3 0h1m3 0h1m3 0h5M0 22.5h7m1 0h1m2 0h2m1 0h1m1 0h5m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m1 0h1m1 0h3m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m3 0h1m4 0h1m1 0h1m2 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h3m2 0h1m1 0h2m3 0h2m2 0h2m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m4 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h6m1 0h1m1 0h1M0 28.5h7m1 0h1m1 0h1m1 0h3m3 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    </div>
+    <p class="qr-link">stqar.github.io/Schulfest</p>
+    <div class="fakten">
+      <span>📅 Fr, 03.07.2026</span>
+      <span>📍 Pfarrhof Pfarrkirchen</span>
+      <span>🎟 Los € 3,–</span>
+    </div>
+    <p class="danke">💛 Jedes Los unterstützt unsere Schule!</p>
+  </article>
+
+  <!-- Flyer 2 -->
+  <article class="flyer">
+    <span class="schere">✂ zum Ausschneiden</span>
+    <svg class="wimpel" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 H1200 V4 H0 Z" fill="#FFC93C"/>
+      <g>
+        <polygon points="0,4 60,4 30,50" fill="#FFC93C"/>
+        <polygon points="60,4 120,4 90,50" fill="#E4572E"/>
+        <polygon points="120,4 180,4 150,50" fill="#14503A"/>
+        <polygon points="180,4 240,4 210,50" fill="#FFC93C"/>
+        <polygon points="240,4 300,4 270,50" fill="#E4572E"/>
+        <polygon points="300,4 360,4 330,50" fill="#14503A"/>
+        <polygon points="360,4 420,4 390,50" fill="#FFC93C"/>
+        <polygon points="420,4 480,4 450,50" fill="#E4572E"/>
+        <polygon points="480,4 540,4 510,50" fill="#14503A"/>
+        <polygon points="540,4 600,4 570,50" fill="#FFC93C"/>
+        <polygon points="600,4 660,4 630,50" fill="#E4572E"/>
+        <polygon points="660,4 720,4 690,50" fill="#14503A"/>
+        <polygon points="720,4 780,4 750,50" fill="#FFC93C"/>
+        <polygon points="780,4 840,4 810,50" fill="#E4572E"/>
+        <polygon points="840,4 900,4 870,50" fill="#14503A"/>
+        <polygon points="900,4 960,4 930,50" fill="#FFC93C"/>
+        <polygon points="960,4 1020,4 990,50" fill="#E4572E"/>
+        <polygon points="1020,4 1080,4 1050,50" fill="#14503A"/>
+        <polygon points="1080,4 1140,4 1110,50" fill="#FFC93C"/>
+        <polygon points="1140,4 1200,4 1170,50" fill="#E4572E"/>
+      </g>
+    </svg>
+    <span class="eyebrow">Schulfest Pfarrkirchen bei Bad Hall</span>
+    <h1>Große Tombola –<br>das gibt's zu gewinnen! 🎉</h1>
+    <p class="untertitel">Einfach den Code mit dem Handy scannen und alle Hauptpreise &amp; Sponsoren entdecken.</p>
+    <div class="qr-box">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#14503A" d="M0 0.5h7m1 0h1m1 0h6m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h3m1 0h2m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m3 0h1m1 0h1m3 0h1m1 0h2m2 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h2m1 0h3m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m4 0h2m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m2 0h2m1 0h5m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m1 0h2m2 0h5M0 8.5h1m1 0h2m1 0h3m1 0h2m1 0h2m1 0h2m1 0h1m3 0h1m2 0h1m1 0h2M3 9.5h1m4 0h1m1 0h1m1 0h4m3 0h1m2 0h3m3 0h1M0 10.5h2m2 0h3m6 0h1m2 0h1m3 0h1m5 0h2M3 11.5h1m1 0h1m1 0h2m2 0h2m2 0h1m2 0h1m9 0h1M0 12.5h1m1 0h1m1 0h8m2 0h1m2 0h1m3 0h1m3 0h2M0 13.5h1m2 0h3m5 0h2m1 0h2m1 0h1m1 0h1m2 0h1m3 0h3M1 14.5h2m1 0h1m1 0h1m2 0h1m2 0h2m2 0h2m1 0h3m1 0h1m2 0h3M0 15.5h2m1 0h2m2 0h6m1 0h3m3 0h3m1 0h1m2 0h1M0 16.5h1m1 0h1m1 0h1m1 0h2m6 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1M5 17.5h1m2 0h1m5 0h2m1 0h1m2 0h1m2 0h1m1 0h3M0 18.5h1m3 0h3m2 0h1m2 0h5m1 0h1m5 0h1m1 0h1M2 19.5h1m2 0h1m1 0h2m1 0h1m2 0h3m1 0h1m2 0h3m3 0h1M1 20.5h3m2 0h3m1 0h2m1 0h2m2 0h2m1 0h7M8 21.5h1m1 0h3m3 0h1m3 0h1m3 0h5M0 22.5h7m1 0h1m2 0h2m1 0h1m1 0h5m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m1 0h1m1 0h3m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m3 0h1m4 0h1m1 0h1m2 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h3m2 0h1m1 0h2m3 0h2m2 0h2m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m4 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h6m1 0h1m1 0h1M0 28.5h7m1 0h1m1 0h1m1 0h3m3 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    </div>
+    <p class="qr-link">stqar.github.io/Schulfest</p>
+    <div class="fakten">
+      <span>📅 Fr, 03.07.2026</span>
+      <span>📍 Pfarrhof Pfarrkirchen</span>
+      <span>🎟 Los € 3,–</span>
+    </div>
+    <p class="danke">💛 Jedes Los unterstützt unsere Schule!</p>
+  </article>
+
+  <!-- Flyer 3 -->
+  <article class="flyer">
+    <span class="schere">✂ zum Ausschneiden</span>
+    <svg class="wimpel" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 H1200 V4 H0 Z" fill="#FFC93C"/>
+      <g>
+        <polygon points="0,4 60,4 30,50" fill="#FFC93C"/>
+        <polygon points="60,4 120,4 90,50" fill="#E4572E"/>
+        <polygon points="120,4 180,4 150,50" fill="#14503A"/>
+        <polygon points="180,4 240,4 210,50" fill="#FFC93C"/>
+        <polygon points="240,4 300,4 270,50" fill="#E4572E"/>
+        <polygon points="300,4 360,4 330,50" fill="#14503A"/>
+        <polygon points="360,4 420,4 390,50" fill="#FFC93C"/>
+        <polygon points="420,4 480,4 450,50" fill="#E4572E"/>
+        <polygon points="480,4 540,4 510,50" fill="#14503A"/>
+        <polygon points="540,4 600,4 570,50" fill="#FFC93C"/>
+        <polygon points="600,4 660,4 630,50" fill="#E4572E"/>
+        <polygon points="660,4 720,4 690,50" fill="#14503A"/>
+        <polygon points="720,4 780,4 750,50" fill="#FFC93C"/>
+        <polygon points="780,4 840,4 810,50" fill="#E4572E"/>
+        <polygon points="840,4 900,4 870,50" fill="#14503A"/>
+        <polygon points="900,4 960,4 930,50" fill="#FFC93C"/>
+        <polygon points="960,4 1020,4 990,50" fill="#E4572E"/>
+        <polygon points="1020,4 1080,4 1050,50" fill="#14503A"/>
+        <polygon points="1080,4 1140,4 1110,50" fill="#FFC93C"/>
+        <polygon points="1140,4 1200,4 1170,50" fill="#E4572E"/>
+      </g>
+    </svg>
+    <span class="eyebrow">Schulfest Pfarrkirchen bei Bad Hall</span>
+    <h1>Große Tombola –<br>das gibt's zu gewinnen! 🎉</h1>
+    <p class="untertitel">Einfach den Code mit dem Handy scannen und alle Hauptpreise &amp; Sponsoren entdecken.</p>
+    <div class="qr-box">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#14503A" d="M0 0.5h7m1 0h1m1 0h6m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h3m1 0h2m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m3 0h1m1 0h1m3 0h1m1 0h2m2 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h2m1 0h3m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m4 0h2m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m2 0h2m1 0h5m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m1 0h2m2 0h5M0 8.5h1m1 0h2m1 0h3m1 0h2m1 0h2m1 0h2m1 0h1m3 0h1m2 0h1m1 0h2M3 9.5h1m4 0h1m1 0h1m1 0h4m3 0h1m2 0h3m3 0h1M0 10.5h2m2 0h3m6 0h1m2 0h1m3 0h1m5 0h2M3 11.5h1m1 0h1m1 0h2m2 0h2m2 0h1m2 0h1m9 0h1M0 12.5h1m1 0h1m1 0h8m2 0h1m2 0h1m3 0h1m3 0h2M0 13.5h1m2 0h3m5 0h2m1 0h2m1 0h1m1 0h1m2 0h1m3 0h3M1 14.5h2m1 0h1m1 0h1m2 0h1m2 0h2m2 0h2m1 0h3m1 0h1m2 0h3M0 15.5h2m1 0h2m2 0h6m1 0h3m3 0h3m1 0h1m2 0h1M0 16.5h1m1 0h1m1 0h1m1 0h2m6 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1M5 17.5h1m2 0h1m5 0h2m1 0h1m2 0h1m2 0h1m1 0h3M0 18.5h1m3 0h3m2 0h1m2 0h5m1 0h1m5 0h1m1 0h1M2 19.5h1m2 0h1m1 0h2m1 0h1m2 0h3m1 0h1m2 0h3m3 0h1M1 20.5h3m2 0h3m1 0h2m1 0h2m2 0h2m1 0h7M8 21.5h1m1 0h3m3 0h1m3 0h1m3 0h5M0 22.5h7m1 0h1m2 0h2m1 0h1m1 0h5m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m1 0h1m1 0h3m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m3 0h1m4 0h1m1 0h1m2 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h3m2 0h1m1 0h2m3 0h2m2 0h2m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m4 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h6m1 0h1m1 0h1M0 28.5h7m1 0h1m1 0h1m1 0h3m3 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    </div>
+    <p class="qr-link">stqar.github.io/Schulfest</p>
+    <div class="fakten">
+      <span>📅 Fr, 03.07.2026</span>
+      <span>📍 Pfarrhof Pfarrkirchen</span>
+      <span>🎟 Los € 3,–</span>
+    </div>
+    <p class="danke">💛 Jedes Los unterstützt unsere Schule!</p>
+  </article>
+
+  <!-- Flyer 4 -->
+  <article class="flyer">
+    <span class="schere">✂ zum Ausschneiden</span>
+    <svg class="wimpel" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 H1200 V4 H0 Z" fill="#FFC93C"/>
+      <g>
+        <polygon points="0,4 60,4 30,50" fill="#FFC93C"/>
+        <polygon points="60,4 120,4 90,50" fill="#E4572E"/>
+        <polygon points="120,4 180,4 150,50" fill="#14503A"/>
+        <polygon points="180,4 240,4 210,50" fill="#FFC93C"/>
+        <polygon points="240,4 300,4 270,50" fill="#E4572E"/>
+        <polygon points="300,4 360,4 330,50" fill="#14503A"/>
+        <polygon points="360,4 420,4 390,50" fill="#FFC93C"/>
+        <polygon points="420,4 480,4 450,50" fill="#E4572E"/>
+        <polygon points="480,4 540,4 510,50" fill="#14503A"/>
+        <polygon points="540,4 600,4 570,50" fill="#FFC93C"/>
+        <polygon points="600,4 660,4 630,50" fill="#E4572E"/>
+        <polygon points="660,4 720,4 690,50" fill="#14503A"/>
+        <polygon points="720,4 780,4 750,50" fill="#FFC93C"/>
+        <polygon points="780,4 840,4 810,50" fill="#E4572E"/>
+        <polygon points="840,4 900,4 870,50" fill="#14503A"/>
+        <polygon points="900,4 960,4 930,50" fill="#FFC93C"/>
+        <polygon points="960,4 1020,4 990,50" fill="#E4572E"/>
+        <polygon points="1020,4 1080,4 1050,50" fill="#14503A"/>
+        <polygon points="1080,4 1140,4 1110,50" fill="#FFC93C"/>
+        <polygon points="1140,4 1200,4 1170,50" fill="#E4572E"/>
+      </g>
+    </svg>
+    <span class="eyebrow">Schulfest Pfarrkirchen bei Bad Hall</span>
+    <h1>Große Tombola –<br>das gibt's zu gewinnen! 🎉</h1>
+    <p class="untertitel">Einfach den Code mit dem Handy scannen und alle Hauptpreise &amp; Sponsoren entdecken.</p>
+    <div class="qr-box">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#14503A" d="M0 0.5h7m1 0h1m1 0h6m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h3m1 0h2m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m3 0h1m1 0h1m3 0h1m1 0h2m2 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h2m1 0h3m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m4 0h2m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m2 0h2m1 0h5m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m1 0h2m2 0h5M0 8.5h1m1 0h2m1 0h3m1 0h2m1 0h2m1 0h2m1 0h1m3 0h1m2 0h1m1 0h2M3 9.5h1m4 0h1m1 0h1m1 0h4m3 0h1m2 0h3m3 0h1M0 10.5h2m2 0h3m6 0h1m2 0h1m3 0h1m5 0h2M3 11.5h1m1 0h1m1 0h2m2 0h2m2 0h1m2 0h1m9 0h1M0 12.5h1m1 0h1m1 0h8m2 0h1m2 0h1m3 0h1m3 0h2M0 13.5h1m2 0h3m5 0h2m1 0h2m1 0h1m1 0h1m2 0h1m3 0h3M1 14.5h2m1 0h1m1 0h1m2 0h1m2 0h2m2 0h2m1 0h3m1 0h1m2 0h3M0 15.5h2m1 0h2m2 0h6m1 0h3m3 0h3m1 0h1m2 0h1M0 16.5h1m1 0h1m1 0h1m1 0h2m6 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1M5 17.5h1m2 0h1m5 0h2m1 0h1m2 0h1m2 0h1m1 0h3M0 18.5h1m3 0h3m2 0h1m2 0h5m1 0h1m5 0h1m1 0h1M2 19.5h1m2 0h1m1 0h2m1 0h1m2 0h3m1 0h1m2 0h3m3 0h1M1 20.5h3m2 0h3m1 0h2m1 0h2m2 0h2m1 0h7M8 21.5h1m1 0h3m3 0h1m3 0h1m3 0h5M0 22.5h7m1 0h1m2 0h2m1 0h1m1 0h5m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m1 0h1m1 0h3m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m3 0h1m4 0h1m1 0h1m2 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h3m2 0h1m1 0h2m3 0h2m2 0h2m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m4 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h6m1 0h1m1 0h1M0 28.5h7m1 0h1m1 0h1m1 0h3m3 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    </div>
+    <p class="qr-link">stqar.github.io/Schulfest</p>
+    <div class="fakten">
+      <span>📅 Fr, 03.07.2026</span>
+      <span>📍 Pfarrhof Pfarrkirchen</span>
+      <span>🎟 Los € 3,–</span>
+    </div>
+    <p class="danke">💛 Jedes Los unterstützt unsere Schule!</p>
+  </article>
+
+</div>
+</div>
+
+</body>
+</html>
