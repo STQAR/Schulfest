@@ -26,10 +26,25 @@ Tischen ausgehängt. Zielgerät ist primär das **Smartphone** (QR-Scan am Tisch
   Fehlt das Foto, bleibt der Platzhalter stehen (kein kaputtes Bild).
 
 ## Inhalte pflegen
-- **Top-Preise:** Abschnitt `#preise`, je Preis ein `<article class="los">`
-  (Hauptpreis zusätzlich Klasse `hauptpreis`). Für weitere Preise Karte duplizieren.
-- **Sponsoren:** Abschnitt `.sponsor-grid`, je Sponsor eine `.sponsor-karte`
-  (mit Logo `<img>` oder nur Name). Zentriertes Flex-Layout, beliebig viele Karten.
+- **Hauptpreis:** Abschnitt `#preise` zeigt bewusst NUR den Hauptpreis
+  (TinyHouse-Gutschein, romantisches Wochenende für 2) als `<article class="los hauptpreis">`.
+  Die Geschenkkörbe (SPAR/BILLA) laufen als Chips unter `#weitere-preise`;
+  ihre Fotos (`spar-korb.jpg`/`billa-korb.jpg`) bleiben im Repo für eine spätere
+  Wieder-Aufwertung zur Karte (einfach `<article class="los">` duplizieren).
+- **Weitere Preise (Auszug):** Abschnitt `#weitere-preise`, zwei `.gewinn-gruppe`-Blöcke
+  (Sachpreise / Gutscheine) mit `.chips`-Listen – je Gewinn ein `<span class="chip">`.
+- **Sponsoren:** Zwei Ebenen. (1) `.sponsor-grid` = große Karte(n) für Sponsor(en)
+  des Hauptpreises (aktuell nur WOLF Haus, solange nur der Hauptpreis beworben wird).
+  (2) `.sponsor-wall` = alphabetische Logo-Wand (Kacheln bewusst groß mit viel
+  Freiraum: Tile ~220px, Logo bis 88px Höhe, Padding 22×28px), je Sponsor eine
+  `.sponsor-tile` (`<img src="<slug>-logo.png|jpg" alt="Name" loading="lazy">`);
+  ohne Logo `.sponsor-tile.nur-name` mit Namenstext (aktuell nur noch
+  „Biohof Langwies“ – Logo bewusst nicht eingebaut, siehe unten). Quell-Logos
+  normalisiert auf max. 360×160 px vor dem Rendern, Rohdaten in
+  `files/Logos_Sponsoren` (tlw. nur im `Sponsorenplakat.pptx` als WMF eingebettet;
+  vor dem Verwerfen dort per Contact-Sheet auf neue/fehlende Sponsoren prüfen –
+  so wurde z. B. „Der Ruzicka“ nachträglich gefunden, `ruzicka.png` lag unbenutzt
+  im Ordner).
 - **Eckdaten** (Datum, Ort, Lospreis): Hero-Chips `.fakten` und Footer.
   Aktueller Stand: Fr, 03.07.2026 · Pfarrhof Pfarrkirchen · Los € 3,–.
 
